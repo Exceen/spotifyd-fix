@@ -28,11 +28,7 @@ structopt = "0.3.17"
 tokio = {version = "1.26.0", features = ["signal", "rt-multi-thread", "process", "io-std"] }
 tokio-stream = "0.1.7"
 url = "2.2.2"
-librespot-audio = { version = "0.4", default-features = false }
-librespot-playback = { version = "0.4", default-features = false }
-librespot-core = { version = "0.4" }
-librespot-discovery = { version = "0.4" }
-librespot-connect = { version = "0.4" }
+librespot = { git = "https://github.com/librespot-org/librespot.git", tag = "v0.4.2", default-features = false }
 toml = "0.7"
 color-eyre = "0.6"
 directories = "5.0.1"
@@ -51,14 +47,14 @@ pledge = "0.4.2"
 env_logger = "0.10"
 
 [features]
-alsa_backend = ["librespot-playback/alsa-backend", "alsa"]
+alsa_backend = ["librespot/alsa-backend", "alsa"]
 dbus_keyring = ["keyring"]
 dbus_mpris = ["dbus", "dbus-tokio", "dbus-crossroads", "rspotify"]
 default = ["alsa_backend"]
-portaudio_backend = ["librespot-playback/portaudio-backend"]
-pulseaudio_backend = ["librespot-playback/pulseaudio-backend"]
-rodio_backend = ["librespot-playback/rodio-backend"]
-rodiojack_backend = ["librespot-playback/rodiojack-backend"]
+portaudio_backend = ["librespot/portaudio-backend"]
+pulseaudio_backend = ["librespot/pulseaudio-backend"]
+rodio_backend = ["librespot/rodio-backend"]
+rodiojack_backend = ["librespot/rodiojack-backend"]
 
 [package.metadata.deb]
 depends = "$auto, systemd, pulseaudio"

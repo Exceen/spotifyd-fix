@@ -8,15 +8,15 @@ use futures::{
     stream::Peekable,
     Future, FutureExt, StreamExt,
 };
-use librespot_connect::spirc::Spirc;
-use librespot_core::{
+use librespot::connect::spirc::Spirc;
+use librespot::core::{
     authentication::Credentials,
     cache::Cache,
     config::{ConnectConfig, DeviceType, SessionConfig},
     session::{Session, SessionError},
 };
-use librespot_discovery::Discovery;
-use librespot_playback::{
+use librespot::discovery::Discovery;
+use librespot::playback::{
     audio_backend::Sink,
     config::{AudioFormat, PlayerConfig},
     mixer::Mixer,

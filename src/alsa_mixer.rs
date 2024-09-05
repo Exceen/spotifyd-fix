@@ -1,4 +1,4 @@
-use librespot_playback::mixer::{Mixer, MixerConfig};
+use librespot::playback::mixer::{Mixer, MixerConfig};
 use log::error;
 use std::error::Error;
 

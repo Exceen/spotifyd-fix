@@ -13,14 +13,14 @@ use futures::{
     task::{Context, Poll},
     Future,
 };
-use librespot_connect::spirc::Spirc;
-use librespot_core::{
+use librespot::connect::spirc::Spirc;
+use librespot::core::{
     keymaster::{get_token, Token as LibrespotToken},
     mercury::MercuryError,
     session::Session,
     spotify_id::SpotifyAudioType,
 };
-use librespot_playback::player::PlayerEvent;
+use librespot::playback::player::PlayerEvent;
 use log::{error, info, warn};
 use rspotify::{
     model::{

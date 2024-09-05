@@ -5,10 +5,10 @@ use crate::{
 };
 use color_eyre::Report;
 use gethostname::gethostname;
-use librespot_core::{
+use librespot::core::{
     cache::Cache, config::DeviceType as LSDeviceType, config::SessionConfig, version,
 };
-use librespot_playback::{
+use librespot::playback::{
     config::{AudioFormat as LSAudioFormat, Bitrate as LSBitrate, PlayerConfig},
     dither::{mk_ditherer, DithererBuilder, TriangularDitherer},
 };

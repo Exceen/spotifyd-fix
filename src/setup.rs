@@ -6,9 +6,9 @@ use crate::{
 };
 #[cfg(feature = "dbus_keyring")]
 use keyring::Entry;
-use librespot_core::{authentication::Credentials, cache::Cache, config::DeviceType};
-use librespot_playback::mixer::MixerConfig;
-use librespot_playback::{
+use librespot::core::{authentication::Credentials, cache::Cache, config::DeviceType};
+use librespot::playback::mixer::MixerConfig;
+use librespot::playback::{
     audio_backend::{Sink, BACKENDS},
     config::AudioFormat,
     mixer::{self, Mixer},
@@ -100,7 +100,7 @@ pub(crate) fn initial_state(config: config::SpotifydConfig) -> main_loop::MainLo
             let mut retry_counter = 0;
             let mut backoff = Duration::from_secs(5);
             let discovery_stream = loop {
-                match librespot_discovery::Discovery::builder(session_config.device_id.clone())
+                match librespot::discovery::Discovery::builder(session_config.device_id.clone())
                     .name(config.device_name.clone())
                     .device_type(device_type)
                     .port(zeroconf_port)
